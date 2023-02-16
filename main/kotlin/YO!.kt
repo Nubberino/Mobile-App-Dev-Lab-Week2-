@@ -9,6 +9,7 @@ import java.util.*
 
 fun main()
 {
+    val decorations = listOf("aocke", "bagoda", "clastic plant", "dlligator", "elowerpot ")
 //    val isUnity = println("Joewari Da")
 //    val isUnit = "Joewari Da"
 //    println(isUnit)
@@ -25,10 +26,47 @@ fun main()
 //    TargetInt()
 //    TargetInt()
 //------------------------------------Numero Tres----------------------------------
-    swim()
-    swim("Sloe")
-    swim(speed = "zero")
-    feedTheFish()
+//    swim()
+//    swim("Sloe")
+//    swim(speed = "zero")
+//    feedTheFish()
+    //------------------------------------FOUR!!!----------------------------------
+
+    val eager = decorations.filter {it[0] == 'c'}
+    println("eager: $eager")
+    val filtered = decorations.asSequence().filter {it[0] == 'd'}
+    println("filtered: $filtered")
+    val newlist = filtered.toList()
+    println("new list: $newlist")
+
+    val lazyMap = decorations.asSequence().map()
+    {
+        println("access: $it")
+        it
+    }
+
+    println("lazy: $lazyMap")
+    println("---------")
+    println("first: ${lazyMap.first()}")
+    println("---------")
+    println("all: ${lazyMap.toList()}")
+
+    val lazyMap2 = decorations.asSequence().filter {it[0] == 'b'}.map()
+    {
+        println("access: $it")
+        it
+    }
+    println("---------")
+    println("all: ${lazyMap2.toList()}")
+
+
+    val mysports = listOf ("Basketball", "fishing", "running")
+    val myplayers = listOf ("The Bronze Jade", "Earnest Hammerway", "Sonic guy")
+    val mycities = listOf ("Lost Angles", "Chicanery", "Green Hills")
+    val mylist = listOf (mysports, myplayers, mycities)
+
+    println("----")
+    println("Flat: ${mylist.flatten()}")
 }
 
 fun randomLane(): String
@@ -110,3 +148,5 @@ fun shouldchangewater (day: String, temp: Int = 22, dirty: Int = 20) : Boolean
 fun is2hot(temp : Int) = temp > 30
 fun is2dirty(dirty : Int) = dirty > 30
 fun isSunday(day: String) = day == "Sundas"
+
+
