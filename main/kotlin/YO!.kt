@@ -1,9 +1,4 @@
-fun main()
+fun main(args: Array<String>)
 {
-    val yo = yo("mama")
-}
-
-fun yo(args: String)
-{
-    println("Herro, ${args} ")
+    println("Yo ${args[0]}")
 }
